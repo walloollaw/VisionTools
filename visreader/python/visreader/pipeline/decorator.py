@@ -305,6 +305,9 @@ class XMappedReader(object):
             buffer_size=1000, use_process=False, \
             shared_memsize=None, shared_pagesize=None, \
             order=False, pre_feed=None):
+        logger.debug('create XMappedReader with shared_memsize[%s]' %
+                     (str(shared_memsize)))
+
         assert buffer_size > 0, "invalid buffer_size[%d] in XMappedReader" \
             % (buffer_size)
         if pre_feed is None:
